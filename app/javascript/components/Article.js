@@ -3,6 +3,22 @@ import PropTypes from "prop-types";
 import Timestamp from "react-timestamp";
 
 class Article extends React.Component {
+
+  componentDidMount() {
+    const self = this;
+    
+    setInterval(function() {
+      self.forceUpdate();
+    }, 5000);
+  }
+
+  componentWillUnmount() {
+    if(this._timer) {
+      clearInterval(this._timer);
+      this._timer = null;
+    }
+  }
+
   render () {
     return (
       <React.Fragment>
