@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import Timestamp from "react-timestamp";
 
+import ColorPicker from "./ColorPicker";
+
 class Article extends React.Component {
 
   componentDidMount() {
@@ -12,12 +14,12 @@ class Article extends React.Component {
     }, 5000);
   }
 
-  componentWillUnmount() {
-    if(this._timer) {
-      clearInterval(this._timer);
-      this._timer = null;
-    }
-  }
+  // componentWillUnmount() {
+  //   if(this._timer) {
+  //     clearInterval(this._timer);
+  //     this._timer = null;
+  //   }
+  // }
 
   render () {
     return (
